@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+Week 2 MiU ssignment
+Howie Livingston
+Ms.Alarcon
+Term 8/2012 
+Wolflinx Mobile App
+-->
+<html>
+	<head>
+	
+		<meta charset ="UTF-8"/>
+		<meta name="keywords" content="Wolflinx multi-stoarge and linking app"/>
+		<meta name ="description" content="Store and organize everthing you do on-line in one place"/>
+		<meta name= "robots" content="index, follow"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<link href="css/style.css" rel="stylesheet"/>
+	    <link media="only screen and (max-device-width: 480px) and (min-device-width: 320px)" href="mobile.css" type="text/css" rel="stylesheet" />
+		<link media="handheld, only screen and (max-device-width: 319px)" href="mobile_simple.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body id="additemBackground">
+			
+	<header>	
+		
+		<div>
+			<p id="wolflinxSignup">Wolflinx Sign-up</p>
+			<a ajax-data="false "id ="addItemWolfhead">
+				<img id ="logo" src="images/wolflinxIcon.png"/>
+			</a>
+		</div>
+		</header>
+	
+		<nav id="navSection">
+				<a href="index.html" id="newbieHome">Home</a>
+				<a href="deleteContacts" data-role="button"id="clear">Clear</a>
+				<a href="editContacts" id="displayLink">Show Members</a>
+				<a href="additem.html" id ="addNew" style="display:none;"> Add New Item</a>
+		</nav>
+	<form action="#" method="post" id="contactForm">
+			<fieldset id="contactFieldset">	
+				<legend id ="sectionTitles">Enter your info.</legend>
+				<span>* fields are required. </span>
+					<ul id="errors"></ul>
+					<ul id="EnterYourInfo">		
+						<li id="select"><label for="groups">Pick A Theme:</label><br /></li>
+						<li><label class ="fields" for= "fname"> *First Name: </label><input type="text" id="fname" /></li>
+						<li><label class ="fields" for= "lname"> *Last Name: </label><input type="text" id="lname" /></li>
+						<li><label class ="fields" for= "pword"> *Password: </label><input type="password" id="pword" /></li>
+						<li><label class ="fields" for= "cpword"> *Confirm Password: </label><input type="password" id="cpword"/></li>
+						<li><label class ="fields" for= "email"> *Email: </label><input type="email" id="email" placeholder="validateEmail" /></li>
+					</ul>
+			</fieldset>
+			<fieldset id="fillInTheBlanks">
+				<legend id = "sectionTitles"> Fill-in-the-blanks</legend>
+		    		<ul id ="FITB?">	
+		    			<a>What will you use Wolflinx for?</a>
+		    			<li><input type="checkbox" id="text" value="Yes" class="text"/><label for="ResearchAndSaveit">Researh</label></li>
+		    			<li><input type="checkbox" value= "SaveMyStories" id="SaveMyStories"/><label for="SaveMyStories">Save My Stories</label></li>
+		    			<li><input type="checkbox" value="SyncFavoriteDigital/SocialMedia" id="SyncFavoriteDigital/SocialMedia"/><label for="SyncFavoriteDigital/SocialMedia">Sync Favorite Digital/SocialMedia</label></li>
+		    			<li><input type="checkbox" value="StoreGamesAndApps" id="StoreGamesAndApps"/><label for="StoreGamesAndApps">Store Games And Apps</label></li>
+		    			<li><input type="checkbox" value="AllOfTheAbove" id="AllOfTheAbove"/><label for="AllOfTheAbove">All Of The Above</label></li>
+		    		</ul>
+		    		<ul id="device?">
+		    			<a>What type of device are you using?</a>
+		    			<li><input type="radio" id="cellPhone" value="CellPhone" name="deviceValue"/><label for="CellPhone">Cell Phone</label></li>
+		    			<li><input type="radio" id="tablet"   value="Tablet"  name="selectValue"/><label for="Tablet">Tablet</label></li>
+		    		</ul>
+		    		<ul id ="FriendsAndDateJoined">
+		    			<li><label for="quantity"> I have <input type= "number" name="quantity" id="quantity"> Friends I'd like to <cite>connect with!</cite></label></li>
+						<li><label for="date"> Date Joined</label><input type="text" id="date"/></li>
+		    		</ul>	
+		    	
+		    	<label for="comments"> Write a catch phrase for your domain here:</label><textarea id ="comments"></textarea>	
+		    			<input  id="editContact" type="hidden" value="true" />
+					<ul id="thankYou">Thanks for signing up!</ul>
+				
+			</fieldset>
+		  
+		    <input type="button" value="Save Information" id="submit" /><br />
+		  
+		  </form>
+		  <ul id="results"></ul>
+		  </div>
+		
+		 <script src="js/newMemberJson.js" type="text/javascript"></script>
+		<script src= "js/main.js" type="text/javascript"></script>
+	</body>
+</html>
+	
+		    	
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    	
+		    	
+		    	
+		    	
+		    	
+		    	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

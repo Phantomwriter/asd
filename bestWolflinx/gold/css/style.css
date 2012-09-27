@@ -1,0 +1,275 @@
+
+/*/*ALL PAGES*/
+
+/*All pages-Blue background color*/
+
+
+.indexBackground{
+			text-align:center;
+			background-image:url('http://us.cdn2.123rf.com/168nwm/yuliufu/yuliufu1111/yuliufu111100992/11290392-background-of-the-old-brick-wall-close-up.jpg');
+}
+
+
+/*INDEX PAGE*/
+
+.logo{
+		padding-top:50px;
+		padding-right:900px;
+
+}
+/*index page-Welcome to Wolflinx-Title*/
+.topCtaTitle{
+		
+			padding-left:30px;
+			color: #a62800;
+			font-size:25pt;
+}
+/*index page-cta catch-phrase text*/ 
+
+/*index page-search field*/ 
+#searchField{
+		text-align:center;
+}
+
+/*index page-search Page text*/ 
+#search{
+		margin-left:100px;
+		color:blue;
+		font-size:14pt;
+		font-style:bold;
+}
+
+/*index page-contact us button text*/
+#contactUs{
+		margin-left:90px;
+}
+
+/*fun page-back to home button text*/
+#backToHomeButton{
+		margin-left:100px;
+}
+
+
+
+
+
+/*index page-Log-in link*/
+#login{
+			padding-left:260px;
+			color:#FFFFFF;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-weight:40px;
+			font-size:18pt;
+}
+/*index page-browse bar and button*/
+
+#browse{
+			
+			padding-left: 200px;
+}
+
+/*index page-All Browse categories*/
+h1{
+			background-color:F6F3D2;
+			width:device-width;
+			text-align:center;
+			padding:10px;
+			border:5px solid orange;
+			border-style: groove;
+			margin:0px;
+			padding-left: 45px;
+			color:a62800;
+			font-style:regular;
+			font-family:Charlemagne Std;
+			font-size:25px;
+			font-weight:bold;
+}
+
+/*index page-all titles for the sections*/
+.BrowseTitles{
+			color:#a62800;
+			font-style:regular;
+			font-family:Copperplate Gothic Bold;
+			font-weight:5px;
+			font-size:24pt;
+			text-outline:10px-black;
+			text-shadow: 0 0 10px #FFFFFF;
+
+}
+
+/*additem page background image*/
+#additemBackground{
+			background-image:url('http://us.cdn2.123rf.com/168nwm/yuliufu/yuliufu1111/yuliufu111100992/11290392-background-of-the-old-brick-wall-close-up.jpg');
+}
+
+
+#enterInfoText{
+				color:blue;
+				font-size:18px;
+}
+
+
+/*additempage-"Wolflinx Sign-Up"*/
+#wolflinxSignup{		
+
+			text-align:right;
+			color:#a62800;
+			font-style:bold;
+			font-family:("Chalkduster",serif, bold);
+			font-weight:60px;
+			font-size:20pt;
+}
+
+/*sectiontitles*/
+#sectionTitles{
+				color:orange;
+}
+
+
+/*additem page-entire bulk nav link-(NAV)Titled sections at the top*/
+#navSection{
+			padding-left:80px;
+}
+
+/*additem page-individual clear saved data link*/
+#clear{			
+			color:orange;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-weight:40px;
+			font-size:24pt;
+			
+			
+}
+/*additem page-display Data*/
+#displayLink{ 
+			
+			color:orange;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-size:24pt;
+			font-weight:40px;
+}
+/*enter your info text*/
+.contactFieldset{
+			color:#3ca0d0;
+			font-size:18pt;
+
+}
+#FITB{		color:#3ca0d0;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-weight:40px;
+			font-size:18pt;
+}
+
+/* Home link*/
+
+/*Display Data page-add new*/
+#addNew{
+
+			color:#FFFFFF;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-weight:1px;
+			font-size:18pt;
+			padding-left:30px;
+
+}
+/*additem page-create account*/
+#createAccount{
+			padding-left:45px;
+
+}
+
+.fields{
+
+			color:#3ca0d0;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-weight:1px;
+			font-size:22pt;
+}
+
+/*additem page-Required Fields text*/
+span{
+			color:#4284d3;
+			font-style:bold;
+			font-family:(Copperplate Gothic Bold);
+			font-weight:1px;
+			margin-left:18px;
+}
+
+
+/*additem page-Total Form-Field Color*/
+#form{
+			
+			width: 375px;
+			bottom center;
+			border:2px solid,#ff4900 ;
+			padding-left:15px;
+			padding-right:40px;
+				
+#date{
+			padding-right:40px;
+}
+
+#signUpLogo{
+			position:absolute;
+			top:70px;
+			padding-left:130px;
+
+}
+
+/*Education Page*/
+
+.educationPageTitle{
+			position:absolute;
+			top:70px;
+			padding-left:130px;
+			color: #a62800;
+			font-size:12pt;
+}
+
+/*Work Page*/
+
+#indexIcon.workPageTitle{
+
+			
+			padding-left:130px;
+			color: #a62800;
+			font-size:12pt;
+}
+
+
+}
+/*JSON DATA*/
+#items{
+			color:yellow;
+			font-size: 24px;
+			font-style:bold;
+}
+
+/*github page*/
+
+#gitHub{
+			color:orange;
+}
+
+#aboutWolflinx{
+			color:black;
+}
+
+#openingStatement{
+			color:white;
+}
+
+
+.homeButton{
+
+			text-align:center;
+
+}
+
+label.error{display:block; margin:10px 0; color:#cc0000}
