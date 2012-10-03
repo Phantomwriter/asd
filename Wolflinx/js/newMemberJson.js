@@ -1,5 +1,5 @@
 
-//Five Groups: Users, Social
+//Five Groups:
 var json = {
 	"funUser 1" :{
 		"group":["Group:","fun"],

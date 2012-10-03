@@ -25,47 +25,40 @@ HTML page with Jquery
 </head>
 
 <body>
-	<section data-role="page" id="home">
-		<header data-role="header" data-position="fixed" class="indexBackground">
+<section data-role="page" id="home">
+		<header data-role="header" data-position="fixed">
 				<h1>Home</h1>
 			    
 		</header>
 		<div class="indexIcon">
 				<a data-ajax="false"> 				
-          	 		<img class="logo" src="images/wolflinxicon.png" alt="logo"/>
+          	 		<img src="images/wolflinxicon.png" alt="logo"/>
           	 	</a>
 		</div>
-		<div data-role="title" class="topCtaTitle">Welcome to Wolflinx-Everything you do on-line in one place.</div>
-
+		<div data-role="title" id="topCtaTitle" style="color:red">Welcome to Wolflinx-Everything you do on-line in one place.</div>
+	<div data-role="content">
 		<div>
 			<a data-ajax="false" href="#signupPage" data-role="button" data-theme="b">Sign-up</a>
 			<a data-ajax="false" href="aboutWolflinx.html" data-role="button" data-theme="e">About Wolflinx</a>
 		</div>
-		<div data-role="content">
-			<div
-			
-			<div id="newStream">
-				<center>
-				<h2>What's in the news?</h2>
-				</center>
-				<ul data-role="listview" data-inset="true">
-					<li>
-						<a data-ajax="false" href="http://www.behance.net/HowieLivingston/followers">
-							<p>Behance network portfolio.</p>
-						</a>
-					</li>
-					<li>
-						<a data-ajax="false" href="http://labs.triggerstreet.com/labs/MyTriggerPage">
-							<p>Check out some of my screenplays I've written. They're sci-fi/paranormal so be warned!</p>
-						</a>
-					</li>
-				</ul>
-			</div>
+		<div id="newStream">
+			<h2>What's in the news?</h2>
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a data-ajax="false" href="http://www.behance.net/HowieLivingston/followers">
+						<p>Behance network portfolio.</p>
+					</a>
+				</li>
+				<li>
+					<a data-ajax="false" href="http://labs.triggerstreet.com/labs/MyTriggerPage">
+						<p>Check out some of my screenplays I've written. They're sci-fi/paranormal so be warned!</p>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<div data-role="fieldcontain">
-			<div>
 			<ul data-role="listview" data-filter="true" data-theme="b">
-				<h1>Just tap and go to your favorites</h1>
+				<li>Just tap and go to your favorites</li>
 				<li>
 					<a href="#fun" data-ajax="false">
 					<img src="images/fun.png" alt="fun"/>
@@ -92,52 +85,48 @@ HTML page with Jquery
 					</a>
 				</li>
 			</ul>
-			</div>
 		</div>
+	</div>
 		<div data-role="footer" data-position="fixed" data-theme="a" >
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#signupPage" data-ajax="false" data-role="button"  data-icon="home" data-theme="a">Sign-in</a></li>
 					<li><a href="gitHub.html" data-ajax="false" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
 				</ul>			
-		    </div>	
-		</div>
-	</section>
+		    </div>/*navbar closer*/	
+		</div>/*Footer closer*/
+	</section>/*section closer*/
 
 	
 								<!--Sign-up Form Page-->
 	
-	<section data-role="page" id="signupPage">
-		<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;">
+<section data-role="page" id="signupPage">
+		<header data-role="header" data-position="fixed" class="indexBackground" style="height50px">
 				<h1>Sign-up</h1>
 		</header>
-		<div data-role="content">
-			<div class="indexIcon">
+	<div data-role="content">
+			<div>
 				<a data-ajax="false"> 				
-          	 		<img class="logo" src="images/signUp.png" alt="logo"/>
+          	 		<img src="images/signUp.png" alt="signUp"/>
           	 	</a>
-				<p style="text-align:center">Sign-up and start linking!</p>
+				<p style="color:red">Sign-up and start linking!</p>
 			</div>
 			<div>
 				<a href="#home" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
 			</div>
 			<div>
-				<a href="#editContacts" data-role="button" id="clear" data-ajax="false" data-theme="b";>Clear Data</a>
-				<a href="#showMembers" data-role="button" id="displayLink" data-ajax="false" data-theme="b";>Show Members</a>
+				<a href="#editContacts" data-role="button" id="clear" data-ajax="false" class="clear" data-theme="b">Clear Data</a>
+				<a href="#showMembers" data-role="button" id="displayLink" data-ajax="false" class="showMembers" data-theme="b">Show Members</a>
 				<a href="#contactForm" data-role="button" id ="addNew" style="display:none;" data-ajax="false"> Add New Item</a>
 			</div>
 		
-	<form action="contactForm" id="contactForm">
-			<div id="enterInfoText">Enter your info.
-			</div>
+		<form action="#" id="signupForm">
+			<div id="enterInfoText">Enter your info.</div>
 				<span>* fields are required. </span>
-				<ul 
-					id="errors">
-				</ul>
 			<div data-role="fieldcontain">
 				<ul id="enterYourInfo">
 					<li><label for="fname"> *First Name: </label>
-					<input type="text" class="required"id="fname" placeholder="Enter your first name" /></li>
+					<input type="text" class="required" id="fname" placeholder="Enter your first name" /></li>
 						
 					<li><label for="lname"> *Last Name: </label>
 					<input type="text" class="required" id="lname" placeholder="Enter your last name"/></li>
@@ -151,24 +140,22 @@ HTML page with Jquery
 					<li><label for="email">*Email:</label>
 					<input type="text" class="required" id="email" placeholder="Please enter a valid e-mail!"/></li>
 				</ul>
-				</div>
 			</div>
-		    <div data-role="fieldcontain">
-			<fieldset data-role="controlgroup">
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
 						
 					<p>What type of device are you using?</p>
 						
 				<div>
-					<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+					<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
      				<label for="radio-choice-1">Cell?</label>
 
-     				<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+     				<input type="radio" name="radio-choice-2" id="radio-choice-2" value="choice-2"  />
      				<label for="radio-choice-2">Tablet?</label>
 				</div>
-			</fieldset>
-				</div>
-				
-				<div data-role="fieldcontain">
+				</fieldset>
+			</div>
+			<div data-role="fieldcontain">
 					<label for="friends">Got Friends?</label>
 		    			<select data-role="slider" name="friends" id="friends">	
 		    				<option value="off">No</option>
@@ -176,8 +163,8 @@ HTML page with Jquery
 						</select>
 				</div>
 				<div data-role="fieldcontain">
-					<p>Choose a group that best describes you</p>
-						<select name="groups" id="groups">
+					<label for="groups">Choose a group that best describes you.</label>
+						<select name="groups" id="groups" data-native-menu="false" class="required">
    							<option value="business">Business</option>
    							<option value="entrepreneur">Entrepreneur</option>
    							<option value="artist">Artist</option>
@@ -185,9 +172,9 @@ HTML page with Jquery
 							<option value="techy">Techy</option>
 						</select>
 		    	</div>	
-		    	<div data-role="fieldcontain" id="month" data-mini="true">
+		    	<div data-role="fieldcontain" id="date" data-mini="true">
 		    		<p>Date Of Birth:</p>
-						<select name="date" onChange="changeDate(this.options[selectedIndex].value);">
+						<select name="month" data-native-menu="false" class="required" onChange="changeDate(this.options[changeDate].value);">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -203,8 +190,8 @@ HTML page with Jquery
 							<option value="12">December</option>
 						</select>
 				</div>
-				<div data-role="fieldcontain" id="day" data-mini="true">
-						<select name="date" id="day">
+				<div data-role="fieldcontain" data-native-menu="false" class="required" id="day" data-mini="true">
+						<select name="days" id="days" data-native-menu="false" class="required">
 							<option value="na">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -238,9 +225,9 @@ HTML page with Jquery
 							<option value="30">30</option>
 							<option value="31">31</option>
 						</select>
-				</div>
-				<div data-role="fieldcontain" data-mini="true" id="year">
-						<select name="date" id="year">
+					</div>
+					<div data-role="fieldcontain" data-mini="true" id="year">
+						<select name="years" id="years" data-native-menu="false" class="required">
 							<option value="na">Year</option>
 							<option value="2012">2012</option>
 							<option value="2011">20011</option>
@@ -296,11 +283,13 @@ HTML page with Jquery
 							<option value="1961">1961</option>
 							<option value="1960">1960</option>
 						</select>
-				</div>
-		</form>
+					</div>
+		
 				<div>
 					<input type="button" value="Save Information" id="submit"/>
 		  		</div>
+		  	</form>
+		  	</div>
 		  	<div data-role="footer" data-position="fixed" data-theme="b">
 				<div data-role="navbar">
 					<ul>
@@ -313,33 +302,35 @@ HTML page with Jquery
 	</section>
 	
 
-									<!--Fun Page-->
-	<section data-role="page" id="fun" class="indexBackground">
-		<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;" data-add-back-btn="true">
+								<!--Fun Page-->
+<section data-role="page" id="fun">
+		<header data-role="header" data-position="fixed"  style="height:30px;" data-add-back-btn="true">
         
         </header>
-		<div data-role="header" data-position="fixed" style="height:20px;">
+		<div data-role="header" data-position="fixed" style="height:50px;">
 				<h1>Fun</h1>
 			</div>
-			<div>
 			<div>
 				<a> 				
           	 		<img src="images/fun.png" class="logo" alt="logo"/>
           	 	</a>
+          	</div>
 			<div>	
 			<div>	
-					<p id funTimePageTitle style="text-align:center" font-size:18pt;">It's Fun Time!</p>
-					<p id="funTimeExplanation" style="text-align:center";>Welcome to entertainment central.</p> 
+					<p id="funTimePageTitle" style="text-align:center">It's Fun Time!</p>
+					<p id="funTimeExplanation" style="text-align:center">Welcome to entertainment central.</p> 
 			</div>	
-				<input type="search" name="search-mini" id="search-mini" value="" data-mini="true"/>
+				<input type="search" name="search-mini" value="" data-mini="true"/>
 				<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
 			</div>
-				<label for="basic" id="topTenText">
+			<div>
+					<label id="topTenText">
 				
 					The box below will be filled with your "top-ten" list, but it's under construction at the moment.
 				
 				</label>
-    			<input type="text" name="favsList" id="favsList" value="favs"  />	
+    				<input type="text" name="favsList" id="funFavsList" value="favs"/>
+				</div>
 		<div data-role="content">	
 				<ul data-role="listview" data-theme="b">
 					<li>
@@ -377,75 +368,78 @@ HTML page with Jquery
 					<li><a data-ajax="false" href="gitHub.html" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
 				</ul>
 			</div>
-		</section>
+		</div>
+</section>
 		
 								<!--EDUCATION PAGE-->
 	
-		<section data-role="page" id="ed" data-add-back-btn="true">
-			<header data-role="header" data-position="fixed" class="indexBackground" style="height:190px;">
+	<section data-role="page" id="ed" data-add-back-btn="true">
+		<header data-role="header" data-position="fixed" class="indexBackground" style="height:190px;">
           		<div data-role="header" data-position="fixed" >
 					<h1>Education</h1>
 				</div>
           		<div>
 					<a> 				
-          	 		<img src="images/education.png"  class="logo "alt="logo"/>
+          	 		<img src="images/education.png"  class="logo" alt="logo"/>
           	 		</a>
 				</div>
         				
 			</header>
-				<div>
-						<input type="search" id="search" value="" data-mini="true" data-theme="c"/>
+			<div>
+						<input type="search" value="" data-mini="true" data-theme="c"/>
 				</div>
-				<div>
+			<div>
 					<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
 				</div>
-			<div data-role="content">	
+				
+		<div data-role="content" id="content">	
+			<div>
 				<p>Store your education stuff here!</p><br>
 				<p>These are some of the places I've attained education from. Wheather it be career related or entrprenuerial in nature, these are my go-to places.</p>
-				<ul data-role="listview" data-theme="a">
+			<ul data-role="listview" data-theme="a">
 					<li><a data-ajax="false" id="FullSailHomepage" href=http://www.fullsail.edu/>Full-Sail University</a></li>
 					<li><a data-ajax="false" id="BostonTechMeetupGroup" href="http://www.meetup.com/Boston-Mobile-App-Developers-iPhone-Droid-iPad/">Boston Tech Meetups</a></li>
 					<li><a href="http://www.hctschool.com/">Health Care Training Services</a></li>
 				</ul>
 			</div>
-			<div data-role="footer" data-theme="b"></div>
-			<div data-role="navbar" data-position="fixed" >
+		</div>
+		<div data-role="footer" data-theme="b">
+				<div data-role="navbar" data-position="fixed" >
 				<ul>
 					<li><a data-ajax="false" href="#signupPage" data-role="button"  data-icon="home" data-theme="a">Sign-in</a></li>
 					<li><a data-ajax="false" href="#home" data-role="button" data-icon="home" data-theme="a">Home</a></li>
 					<li><a href="gitHub.html" data-ajax="false" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
 				</ul>			
 			</div>
-		</div>
+			</div>
 	</section>
 
-									<!--WORK PAGE-->
+								<!--WORK PAGE-->
 		
-		<section data-role="page" id="work" data-add-back-btn="true">
-			<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;">
-				<h1>Work</h1>
-          	</header>		
+	<section data-role="page" id="work" data-add-back-btn="true">
+		<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px"></header>
 			<div>
 					<a> 				
-          	 		<img src="images/work.png"  class="logo "alt="logo"/>
+          	 		<img src="images/work.png"  class="logo" alt="logo"/>
           	 		</a>
 			</div>
 			<div data-role="content">	
-				<div>		
+			<div>		
 		    		<label for="search-mini" id="searchField">It takes one dynamic team to bring down an industry.</label>
 					<input type="search" data-mini="true" data-theme="d"/>
 				</div>
-				<div>
+			<div>
 					<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
-				</div>
+			</div>
+			<div>
 					<p>Here are my employers over the last 12 years.</p>		
-				<div>
-					<ul data-role="listview" data-theme="a">
-						<li><a data-ajax="false" id="braintreerehab" href="http://www.braintreerehabhospital.com/">Braintree Rehab Hospital</a></li>
-						<li><a data-ajax="false" id="radford" href="http://www.radford1.com/">Radford Warehouse</a></li>
-						<li><a data-ajax="false" id="mortfund" href="http://www.merchantcircle.com/business/Mortgage.Funding.Corp.781-829-0440">Mortgage Funding Corporation</a></li>
-					</ul>
-				</div>
+				<ul data-role="listview" data-theme="a">
+					<li><a data-ajax="false" id="braintreerehab" href="http://www.braintreerehabhospital.com/">Braintree Rehab Hospital</a></li>
+					<li><a data-ajax="false" id="radford" href="http://www.radford1.com/">Radford Warehouse</a></li>
+					<li><a data-ajax="false" id="mortfund" href="http://www.merchantcircle.com/business/Mortgage.Funding.Corp.781-829-0440">Mortgage Funding Corporation</a></li>
+				</ul>
+			</div>
+		</div>
 			<div data-role="footer" data-position="fixed" data-theme="d">
 				<div data-role="navbar" >
 					<ul>
@@ -455,27 +449,26 @@ HTML page with Jquery
 					</ul>			
 				</div>
 			</div>
-		</section>
+	</section>
 	
 								<!--NETWORKS PAGE-->
 	<section data-role="page" id="networks" data-add-back-btn="true" class="indexBackground">
-
 		<header data-role="header" data-position="fixed" data-theme="c">
     		<div data-role="header" data-position="fixed" data-theme="c">
 				<h1>Networks</h1>
 			</div>
-          	<div class="indexIcon" style="text-align:center;" >
+          	<div class="indexIcon" style="text-align:center">
           	 	<a data-ajax="false"> 				
           	 		<img src="images/networksIcon.png" alt="networks">
           	 	</a>
     		</div>
-			<div>	
+    	</header>
+		<div data-role="content">
+		<div>	
 				<input type="search" name="search" id="searc-basic" value="" />			
 					<p><a data-ajax="false" data-role="button" data-mini="true" id="backToHomeButton" data-theme="e" href="#home">Take Me Home</a></p>
 			</div>
-		</header>
-	<div data-role="content">
-			<div class="ui-grid-b">
+		<div class="ui-grid-b">
 				<div class="ui-block-a">
 					<img src="images/facebook.png" alt="cover" />
 				</div>
@@ -493,8 +486,7 @@ HTML page with Jquery
 				</div>
 			</div>
 		</div><!-- end of content -->
-	</div>
-	<div data-role="footer" data-position="fixed" data-theme="d">
+		<div data-role="footer" data-position="fixed" data-theme="d">
 		<div data-role="navbar" >
 			<ul>
 				<li><a data-ajax="false" href="#signupPage" data-role="button"  data-icon="home" data-theme="a">Sign-in</a></li>
@@ -503,10 +495,37 @@ HTML page with Jquery
 			</ul>			
 		</div>
 	</div>
+	</section>
+	
+	<!--Show Members Page-->
+	<section data-role="page" id="showMembers" data-theme="b">
+			<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;">
+				<h1>All the Members</h1>
+          	</header>		
+			<div>
+					<a> 				
+          	 		<img src="images/work.png"  class="logo" alt="logo"/>
+          	 		</a>
+			</div>
+			<div data-role="content">	
+				<div>
+					<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
+				</div>
+			</div>		
+			<div data-role="footer" data-position="fixed" data-theme="d">
+				<div data-role="navbar" >
+					<ul>
+						<li><a data-ajax="false" href="#signupPage" data-role="button"  data-icon="home" data-theme="a">Sign-in</a></li>
+						<li><a data-ajax="false" href="#home" data-role="button" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="gitHub.html" data-ajax="false" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
+					</ul>			
+				</div>
+			</div>
+	</section>
 								<!--About Wolflinks-->
 	
 	
-	<section data-role="page" id="fun" class="indexBackground">
+	<section data-role="page" id="aboutWolflinx" class="indexBackground">
 		<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;">
         </header>
 			<div data-role="header" data-position="fixed" style="height:20px;">
@@ -517,14 +536,14 @@ HTML page with Jquery
 				<a> 				
           	 		<img src="images/fun.png"  class="logo" alt="logo"/>
           	 	</a>
-					<p id funTimePageTitle style="text-align:center" font-size:18pt;">It's Fun Time!</p>
-					<p id="funTimeExplanation" style="text-align:center";>Welcome to entertainment central.</p> 
+					<p style="text-align:center">It's Fun Time!</p>
+					<p style="text-align:center">Welcome to entertainment central.</p> 
 			</div>	
 				<input type="search" name="search-mini" id="search-mini" value="" data-mini="true"/>
 				<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
 		</div>
-		<label for="basic">Your organized list will appear here</label>
-    				<input type="text" name="favsList" id="favsList" value="favs"  />	
+		<label>Your organized list will appear here</label>
+    				<input type="text" name="favsList" id="favsList" value="favs"/>	
 		<div data-role="content">	
 				
 				<ul data-role="listview" data-theme="b">
@@ -563,12 +582,14 @@ HTML page with Jquery
 						<li><a data-ajax="false" href="gitHub.html" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
 					</ul>
 				</div>
-			</section>
+			</div>
+	</section>
 		
 									<!--Javascript-->
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/newMemberJson.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	
 	</body>
