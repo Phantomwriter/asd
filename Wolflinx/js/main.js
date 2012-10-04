@@ -15,8 +15,9 @@ mainJS page with Jquery
 $('#home').on('pageinit', function(){
 		console.log("It's working");
 		/* then*/
-	
+});	
 $('#signupPage').on('pageinit', function(){
+	var contactGroups =["--pickATheme--", "Fun", "Education", "Work"];	
 	var validate = function(){
 	var myForm=$('#signupForm');
 		    myForm.validate({
@@ -28,34 +29,40 @@ $('#signupPage').on('pageinit', function(){
 		
 		}
 	});
+	}
+
+
+var displayLink = $('displayLink');
+			displayLink.on("click", getData);
+		var clearLink =$('#clear');
+			clearLink.on("click", clearLocal);
+		var save= $('#submit');
+			save.on("click", validate);
+});
+
 
 //shotrten console.log into just......say().
-	var say = function(message){
+var say = function(message){
 		    console.log(message);
 };	
 
 
-
-
-
-
 //Get data
-
-	getData= function(){
+var getData= function(){
 	
 		if(localStorage.length === 0){
 				alert("There's no Data in Local Storage so default data was entered");
 				autoFillData();
-}
+	}
 		var makeDiv = $('<div id="items"></div>');
 			makeDiv.appendTo('#showMembers');
-		var makeList = $('ul');
+		var makeList = $('<ul>');
 			makeList.addClass("members").appendTo('#items');
 	
 		for (var i=0, len=localStorage.length; i<len;i++){
-		var eachMember =$('li');
+		var eachMember =$('<li>');
 		eachMember.addClass('eachMember').appendTo('members');
-		var linksLi= $('li');
+		var linksLi= $('<li>');
 		var key=localStorage.key(i);
 		var value=localStorage.getItem(key);
 		var obj=JSON.parse(value);
@@ -63,7 +70,7 @@ $('#signupPage').on('pageinit', function(){
 			makeSubList.appendTo('eachMember');
 			getImage(obj.member[1], makeSubList);
 		for (var n in obj){
-			var makeSubLi=$('li');
+			var makeSubLi=$('<li>');
 			var optSubText=obj[n][0] + " " + obj[n][1];
 				makeSubli.appendTo('#each')
 					.HTML(optSubText);
@@ -73,17 +80,16 @@ $('#signupPage').on('pageinit', function(){
 	}
 }
 	
- 
 //Store data
-
-	storeData= function(key){
+var storeData= function(key){
 		if(!key){
 			var id=Math.floor(Math.random()*100000001);
 		
 		}else{
 			id =key;
-};
-		getSelectedRadio();		
+		};
+		pickATheme();
+		deviceValues();	
 		var item            ={};
 			item.fname		=['First Name:', $('#fname').value];
 			item.lname		=['Last Name:', $('#lname').value];
@@ -100,20 +106,17 @@ $('#signupPage').on('pageinit', function(){
 		
 } 
  
-/* 
-Auto-populate Local Storage and
-store the JSON object in local storage
-*/
-    
-    	var autoFillData= function (){
+ /*Auto-populate Local Storage and
+store the JSON object in local storage*/
+var autoFillData= function (){
     	for (var n in json){
     		var id = Math.floor(Math.random()*100000001);
     			localStorage.setItem(id, JSON.stringify(json[n]));
     	}
     }
+
 //links for the items
-	
-		var	makeItemLinks = function(key, linksLi){
+var	makeItemLinks = function(key, linksLi){
 		var editLink=$('a');
 			editLink.attr("href","#signupPage");
 			editLink.key = key;
@@ -130,8 +133,7 @@ store the JSON object in local storage
 }
 
 //edit item
-	
-	var editItem= function(){
+var editItem= function(){
 		var value = localStorage.getItem(this.key);
 		var item = JSON.parse(value);
 			$('#groups').val(item.groups[1]);
@@ -148,15 +150,12 @@ store the JSON object in local storage
 		for (var i=0; i<radios.length; i++){
 			if(radios[i].val() == "CellPhone" && item.deviceValue[1] =="CellPhone"){
 				radios[i].attr("checked","checked");
-			}else if($(radios[i]).val() =="Tablet" && item.deviceValue[i] == "Tablet") {
+			}else if($(radios[i]).val() =="Tablet" && item.deviceValue[i] == "Tablet"){
 				radios[i].attr("checked","checked");
-	}
+			}
 }
 		
-			
-				
-				
-		var editSubmit = $('#submit');
+			var editSubmit = $('#submit');
 			editSubmit.off("click", validate);
 			editSubmit.val("editContact");
 			editSubmit.on("click", storeData);
@@ -164,18 +163,17 @@ store the JSON object in local storage
 }
 		
 /*Delete Item*/
-	var deleteItem = function (){
+var deleteItem = function (){
 		var ask = confirm("R U sure U want 2 delete the content?");
 		if(ask){
 			localStorage.removeItem(this.key);
 				alert("Deleted successfully!");
 					window.location.reload();
 }
-
+}
 
 //Clear local storage
-	
-	function clearLocal(){
+function clearLocal(){
 		if(localStorage.length === 0){
 			alert("There's no data to clear!");
 		}else{
@@ -187,9 +185,8 @@ store the JSON object in local storage
 }	
 
 //Getting image for the right category
-
-		var getImage= function (pickATheme, makeSubList){
-    	var imageLi=$('li'); 
+var getImage= function (pickATheme, makeSubList){
+		var imageLi=$('li'); 
     		makeSubList.append(imageLi);
     	var newImg=$('img');
     	var setSrc=newImg.attr("src", "images/" + pickATheme + ".png");
@@ -197,8 +194,8 @@ store the JSON object in local storage
     }
 
 /*Date*/
-	function date(i){
-		var e = $('day');
+/*function date(i){
+		var e = $('#day');
 			while(e.length>0)
 				e.remove(e.length-1);
 		var j=-1;
@@ -212,58 +209,49 @@ store the JSON object in local storage
 			k=31;
 		while(j++<k){
 		var s=$('option');
-		var e=$('day');
+		var e=$('#day');
 		if(j==0){
-			s.text="Day";
+			s.text="#day";
 			s.value="na";
 		try{
-			e.addClass(s,null);}
+			e.attr(s,"null");}
 		catch(ex){
-			e.addClass(s);}}
+			e.attr(s);}}
 		else{
 			s.text=j;
 			s.value=j;
 		try{
-			e.addClass(s,null);}
+			e.attr(s,"null");}
 		catch(ex){
 			e.addClass(s);}}}}
-			y = 2010;
-		while (y-->1909){
+	y = 2010;
+	while (y-->1909){
 		var s = $('option');
-		var e = $('year');
+		var e = $('#year');
 			s.text=y;
 			s.value=y;
 		try{
-			e.addClass(s,null);}
+			e.attr(s,"null");}
 			catch(ex){
-		e.addClass(s);}}
-
-//Local variables and function calls
+		e.attr(s);}}*/
 		
-		var contactGroups =["--pickATheme--", "Fun", "Education", "Work"],
-			deviceValue,				
-			pickATheme();
-			
-			
 //Get the radio button data			
-
-	var deviceValues = function() {
+var deviceValues = function() {
         var radios = $('input:radio[name=deviceValue]:checked').val();
 			return radios;
 }
 
 //Pick a theme for the groups
-
-	function pickATheme(){
-		var formTag = $("groups");
-			selectLi = $('select');
-			makeSelect = $('select');
+function pickATheme(){
+		var formTag = $("#groups");
+			selectLi = $('<select>');
+			makeSelect = $('<select>');
 			makeSelect.attr("id", "groups");
 	for (var i=0, j=contactGroups.length; i<j; i++){
-		var makeOption =$('option');
+		var makeOption =$('<option>');
 		var optText= contactGroups[i];
 			makeOption.attr("value", optText);
-			makeOption.HTML =optText;
+			makeOption.html=optText;
 			makeSelect.appendTo(makeOption);
 			
 	}
@@ -277,15 +265,7 @@ store the JSON object in local storage
 
 //Set Link and Submit Click Events
 	
-		var displayLink = $('displayLink');
-			displayLink.on("click", getData);
-		var clearLink =$('#clear');
-			clearLink.on("click", clearLocal);
-		var save= $('#submit');
-			save.on("click", validate);
-
-
-});
+		
 $('#displayLink').on('pageinit', function(){
     //code needed for home page goes here
 });
