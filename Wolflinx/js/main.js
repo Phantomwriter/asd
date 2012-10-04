@@ -11,7 +11,6 @@ mainJS page with Jquery
 
 
 //Laod Page
-
 $('#home').on('pageinit', function(){
 		console.log("It's working");
 		/* then*/
@@ -31,7 +30,7 @@ $('#signupPage').on('pageinit', function(){
 	});
 	}
 
-
+//Set Link and Submit Click Events
 var displayLink = $('displayLink');
 			displayLink.on("click", getData);
 		var clearLink =$('#clear');
@@ -39,13 +38,6 @@ var displayLink = $('displayLink');
 		var save= $('#submit');
 			save.on("click", validate);
 });
-
-
-//shotrten console.log into just......say().
-var say = function(message){
-		    console.log(message);
-};	
-
 
 //Get data
 var getData= function(){
@@ -106,16 +98,7 @@ var storeData= function(key){
 		
 } 
  
- /*Auto-populate Local Storage and
-store the JSON object in local storage*/
-var autoFillData= function (){
-    	for (var n in json){
-    		var id = Math.floor(Math.random()*100000001);
-    			localStorage.setItem(id, JSON.stringify(json[n]));
-    	}
-    }
-
-//links for the items
+//Links for the items
 var	makeItemLinks = function(key, linksLi){
 		var editLink=$('a');
 			editLink.attr("href","#signupPage");
@@ -132,7 +115,7 @@ var	makeItemLinks = function(key, linksLi){
 			linksLi.append(deleteLink);
 }
 
-//edit item
+//Edit item
 var editItem= function(){
 		var value = localStorage.getItem(this.key);
 		var item = JSON.parse(value);
@@ -162,7 +145,7 @@ var editItem= function(){
 			editSubmit.key = this.key;
 }
 		
-/*Delete Item*/
+//Delete Item
 var deleteItem = function (){
 		var ask = confirm("R U sure U want 2 delete the content?");
 		if(ask){
@@ -171,6 +154,15 @@ var deleteItem = function (){
 					window.location.reload();
 }
 }
+
+//Auto-populate Local Storage and
+//store the JSON object in local storage
+var autoFillData= function (){
+    	for (var n in json){
+    		var id = Math.floor(Math.random()*100000001);
+    			localStorage.setItem(id, JSON.stringify(json[n]));
+    	}
+    }
 
 //Clear local storage
 function clearLocal(){
@@ -193,48 +185,7 @@ var getImage= function (pickATheme, makeSubList){
     		imageLi.append(newImg);
     }
 
-/*Date*/
-/*function date(i){
-		var e = $('#day');
-			while(e.length>0)
-				e.remove(e.length-1);
-		var j=-1;
-		if(i=="na")
-			k=0;
-		else if(i==2)
-			k=28;
-		else if(i==4||i==6||i==9||i==11)
-			k=30;
-		else
-			k=31;
-		while(j++<k){
-		var s=$('option');
-		var e=$('#day');
-		if(j==0){
-			s.text="#day";
-			s.value="na";
-		try{
-			e.attr(s,"null");}
-		catch(ex){
-			e.attr(s);}}
-		else{
-			s.text=j;
-			s.value=j;
-		try{
-			e.attr(s,"null");}
-		catch(ex){
-			e.addClass(s);}}}}
-	y = 2010;
-	while (y-->1909){
-		var s = $('option');
-		var e = $('#year');
-			s.text=y;
-			s.value=y;
-		try{
-			e.attr(s,"null");}
-			catch(ex){
-		e.attr(s);}}*/
-		
+
 //Get the radio button data			
 var deviceValues = function() {
         var radios = $('input:radio[name=deviceValue]:checked').val();
@@ -257,26 +208,9 @@ function pickATheme(){
 	}
 			
 			selectLi.appendTo(makeSelect);
-}	
-				
+}		
 
-			
-			
-
-//Set Link and Submit Click Events
-	
-		
-$('#displayLink').on('pageinit', function(){
-    //code needed for home page goes here
-});
-
-$('#').on('pageinit', function(){
-    //code needed for home page goes here
-});
-
-$('#').on('pageinit', function(){
-    //code needed for home page goes here
-});   
+   
 
 
 

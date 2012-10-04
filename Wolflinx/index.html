@@ -16,7 +16,6 @@ HTML page with Jquery
 	<meta charset="utf-8"/>
 	<meta name="HandheldFriendly" content="True"/>
 	<meta name="MobileOptimized" content="320"/>
-	<meta name="viewport" content="width=device-width; initial-scale=1"/>
 	<link media="only screen and (max-device-width: 480px) and (min-device-width: 320px)" href="mobile.css" type="text/css" rel="stylesheet" />
 	<link media="handheld, only screen and (max-device-width: 319px)" href="mobile_simple.css" type="text/css" rel="stylesheet" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" /> 
@@ -30,20 +29,28 @@ HTML page with Jquery
 				<h1>Home</h1>
 			    
 		</header>
-		<div class="indexIcon">
+		<div>
 				<a data-ajax="false"> 				
-          	 		<img src="images/wolflinxicon.png" alt="logo"/>
+          	 		<img id="indexIcon" src="images/wolflinxicon.png" alt="logo"/>
           	 	</a>
 		</div>
-		<div data-role="title" id="topCtaTitle" style="color:red">Welcome to Wolflinx-Everything you do on-line in one place.</div>
+		<div data-role="title" id="topCtaTitle" style="text-align:center">Welcome to Wolflinx</div>
+		<div id="homeText" style="color:blue">
+			<ul>
+				
+				<li>Check out the "What's in the news for the latest Wolflinx news as it comes in.</li>
+				<li>Scroll-Down to see current user libraries in the three main categories</li>
+			</ul>
+		</div>
+
 	<div data-role="content">
 		<div>
-			<a data-ajax="false" href="#signupPage" data-role="button" data-theme="b">Sign-up</a>
-			<a data-ajax="false" href="aboutWolflinx.html" data-role="button" data-theme="e">About Wolflinx</a>
+			<a data-ajax="false" href="#signupPage" data-role="button" data-mini="true" data-theme="b">Sign-up here to create an account or see other members via different data types</a>
+			<a data-ajax="false" href="#aboutWolflinx" data-role="button" data-mini="true" data-theme="e">About Wolflinx  to find out more about what this app does</a>
 		</div>
-		<div id="newStream">
-			<h2>What's in the news?</h2>
-			<ul data-role="listview" data-inset="true">
+		<div>
+			<div data-role="title" id="newsTitle" style="text-align:center"><p style="color:#1437ad">What's in the news?</p></div>
+			<ul data-role="listview" data-inset="true" data-theme="b">
 				<li>
 					<a data-ajax="false" href="http://www.behance.net/HowieLivingston/followers">
 						<p>Behance network portfolio.</p>
@@ -105,7 +112,7 @@ HTML page with Jquery
 				<h1>Sign-up</h1>
 		</header>
 	<div data-role="content">
-			<div>
+			<div id="headerIconAndText" style="text-align:center">
 				<a data-ajax="false"> 				
           	 		<img src="images/signUp.png" alt="signUp"/>
           	 	</a>
@@ -294,7 +301,7 @@ HTML page with Jquery
 				<div data-role="navbar">
 					<ul>
 						<li><a data-ajax="false" href="#signupPage" data-theme="a" data-icon="home">Sign-in</a></li>
-						<li><a data-ajax="false" href="aboutWolflinx.html" data-theme="a" data-icon="info">AboutWolflinx</a></li>
+						<li><a data-ajax="false" href="#aboutWolflinx" data-theme="a" data-icon="info">AboutWolflinx</a></li>
 						<li><a data-ajax="false" href="gitHub.html" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
 					</ul>
 				</div>
@@ -490,14 +497,14 @@ HTML page with Jquery
 		<div data-role="navbar" >
 			<ul>
 				<li><a data-ajax="false" href="#signupPage" data-role="button"  data-icon="home" data-theme="a">Sign-in</a></li>
-				<li><a data-ajax="false" href="bronze/index.html" data-role="button" data-icon="info" data-theme="a">BronzApp</a></li>
+				<li><a data-ajax="false" href="#aboutWolflinx" data-role="button" data-icon="info" data-theme="a">About Wolflinx</a></li>
 				<li><a data-ajax="false" href="gitHub.html" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
 			</ul>			
 		</div>
 	</div>
 	</section>
 	
-	<!--Show Members Page-->
+									<!--Show Members Page-->
 	<section data-role="page" id="showMembers" data-theme="b">
 			<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;">
 				<h1>All the Members</h1>
@@ -511,6 +518,14 @@ HTML page with Jquery
 				<div>
 					<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
 				</div>
+			<div data-role="listview" id="items">
+				<ul id="each"></ul>
+				
+			
+			
+			
+			
+			</div>
 			</div>		
 			<div data-role="footer" data-position="fixed" data-theme="d">
 				<div data-role="navbar" >
@@ -525,64 +540,51 @@ HTML page with Jquery
 								<!--About Wolflinks-->
 	
 	
-	<section data-role="page" id="aboutWolflinx" class="indexBackground">
-		<header data-role="header" data-position="fixed" class="indexBackground" style="height:100px;">
-        </header>
-			<div data-role="header" data-position="fixed" style="height:20px;">
-				<h1>Fun</h1>
-			</div>
-			<div>
-			<div data-add-back-btn="true">
-				<a> 				
-          	 		<img src="images/fun.png"  class="logo" alt="logo"/>
-          	 	</a>
-					<p style="text-align:center">It's Fun Time!</p>
-					<p style="text-align:center">Welcome to entertainment central.</p> 
-			</div>	
-				<input type="search" name="search-mini" id="search-mini" value="" data-mini="true"/>
-				<a href="index.html" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
+	<section data-role="page" id="aboutWolflinx">
+		
+	<header data-role="header" data-position="fixed" id="aboutWolflinx" style="height:50px;">
+					<h1>About Wolflinx</h1>
+          			
+	</header>
+		<div id="indexIcon" class="indexIcon" style="text-align:center">
+          	 		<a data-ajax="false"> 				
+          	 			<img id="logo"src="images/wolflinxIcon.png">
+          	 		</a>
+          	 	</div>         		
+    			<div>
+		<h1> Connect everything here!</h1><br>
+				</div>			
+		<div>
+			<a href="index.html" class="homeButton" data-ajax="false" data-role="button" data-mini="true"  class="backToHomeButton" data-theme="e">Take Me Home</a>
 		</div>
-		<label>Your organized list will appear here</label>
-    				<input type="text" name="favsList" id="favsList" value="favs"/>	
-		<div data-role="content">	
-				
-				<ul data-role="listview" data-theme="b">
-					<li>
-						<a href="#networks" data-ajax="false">
-							<img src="images/networksIcon.png" alt="networks"/>
-							<h3>Networks</h3>
-							<p>Access Networks</p>
-						</a>
-					</li>
-				</ul>
-				<ul data-role="listview" data-mini="true" data-theme="b">
-					<li>
-						<a href="#games" data-ajax="false">
-							<img src="images/gameIcon.png" alt="games"/>
-							<h3>Games</h3>
-							<p>Access Games</p>
-						</a>
-					</li>
-				</ul>
-				<ul data-role="listview" data-mini="true" data-theme="b">
-					<li>
-						<a href="#digitalMedia" data-ajax="false">
-							<img src="images/digitalMediaIcon.png" alt="media"/>
-							<h3>Digital Media</h3>
-							<p>Access Music and Videos</p>
-						</a>
-					</li>
-				</ul>
+<div data-role="content" id="wolflinxDescription" style="color:#a63e00; font-size:18pt;">
+			<p>Store everything you do and everywhere you want to go in one place.<br>
+			Sick of scrolling through your phone?<br>
+			With Wolflinx, connect all of your favorites.</p> 
+			
+			
+			
+			
+			<div data-role="title" id="aboutWolflinksList">
+			<ul>
+				<li>Social Networks</li>
+				<li>Games</li>
+				<li>Favorite Websites</li>
+				<li>Research</li>
+				<li>Contacts</li>
+				<li>And so much more</li>
+			</ul>	
 			</div>
-			<div data-role="footer" data-position="fixed" data-theme="b">
-				<div data-role="navbar">
-					<ul>
-						<li><a data-ajax="false" href="#signupPage" data-theme="a" data-icon="home">Sign-in</a></li>
-						<li><a data-ajax="false" href="#home" data-theme="a" data-icon="home">Home</a></li>
-						<li><a data-ajax="false" href="gitHub.html" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
-					</ul>
-				</div>
-			</div>
+
+<!--Footer-->		
+		<!--Navbar-->	<div data-role="navbar" data-position="fixed" >
+						<ul>
+							<li><a href="#signupPage" data-ajax="false" data-role="button"  data-icon="home" data-theme="a">Sign-in</a></li>
+							<li><a href="index.html" data-ajax="false" data-role="button" data-icon="info" data-theme="a">Home</a></li>
+							<li><a href="gitHub.html" data-ajax="false" data-role="button" data-icon="gear" data-theme="a">Git Links</a></li>
+						</ul>			
+		        </div>
+		
 	</section>
 		
 									<!--Javascript-->

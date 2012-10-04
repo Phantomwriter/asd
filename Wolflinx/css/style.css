@@ -16,6 +16,10 @@ CSS page with Jquery selectors
 
 /*Blue background color*/
 
+#newsTitle{
+			font-size:18pt;
+			color:orange;
+
 .indexBackground{
 			text-align:center;
 			background-image:url('http://us.cdn2.123rf.com/168nwm/yuliufu/yuliufu1111/yuliufu111100992/11290392-background-of-the-old-brick-wall-close-up.jpg');
@@ -27,14 +31,14 @@ CSS page with Jquery selectors
 			color:#ff6400;
 }
 .logo{
-		padding-top:100px;
+		padding-top:150px;
 		padding-left:450px;
 
 }
 /*page-Welcome to Wolflinx-Title*/
 #topCtaTitle{
 		
-			padding-left:75px;
+			text-align:center;
 			color: #a62800;
 			font-size:25pt;
 }
