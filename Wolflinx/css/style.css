@@ -22,24 +22,8 @@ CSS page with Jquery selectors
 			background-image:url('http://us.cdn2.123rf.com/168nwm/yuliufu/yuliufu1111/yuliufu111100992/11290392-background-of-the-old-brick-wall-close-up.jpg');
 }
 
-
-#topTenText{
-			padding-left:100px;
-			font-size:14pt;
-			color:#ff6400;
-}
-.logo{
-		padding-top:100px;
-		padding-left:450px;
-
-}
 /*page-Welcome to Wolflinx-Title*/
-.topCtaTitle{
-		
-			padding-left:75px;
-			color: #a62800;
-			font-size:25pt;
-}
+
 
 #aboutWolflinx{
 				height:200px;

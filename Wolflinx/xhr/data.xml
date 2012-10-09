@@ -1,0 +1,62 @@
+/*List of xml items*/
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+    <item>
+        <fname>Invader</fname>
+        <lname>Zim</lname>
+        <pword>dirtbaby</pword>
+        <cpword>dirtbaby</cpword>
+        <email>me@me.com</email>
+        <deviceValue>cell</deviceValue>
+        <friends>0</friends>
+        <group>art</goup>
+        <date>May,22 1969</date>
+    </item>
+     <item>
+        <fname>Morticai</fname>
+        <lname>Bird</lname>
+        <pword>Roadtrip</pword>
+        <cpword>Roadtrip</cpword>
+        <email>me@me.com</email>
+		<deviceValue>cell</deviceValue>
+        <friends>1</friends>
+        <group>art</goup>
+        <date>May,22 1969</date>
+    </item>
+ 	<item>
+        <fname>Rigby</fname>
+        <lname>Raccoon</lname>
+        <pword>Icanfixit!</pword>
+        <cpword>Icanfixit!</cpword>
+        <email>me@me.com</email>
+        <deviceValue>cell</deviceValue>
+        <group>art</goup>
+        <friends>1</friends>
+        <date>May,22 1969</date>
+    </item>
+ 	<item>
+        <fname>Ben</fname>
+        <lname>Grimm</lname>
+        <pword>Itscloberintime</pword>
+        <cpword>Itscloberintime</cpword>
+        <email>me@me.com</email>
+        <deviceValue>cell</deviceValue>
+        <friends>3</friends>
+        <group>art</goup>
+        <date>May,22 1969</date>
+    </item>
+ 	<item>
+        <fname>Bruce</fname>
+        <lname>Banner</lname>
+        <pword>Dontmakemeangry</pword>
+        <cpword>Dontmakemeangry</cpword>
+        <email>me@me.com</email>
+        <deviceValue>cell</deviceValue>
+        <friends>0</friends>
+        <group>art</goup>
+        <date>May,22 1969</date>
+    </item>
+</items>
+
+
+   
