@@ -1,67 +1,71 @@
-//Five Groups: Users, Social
+//Five Groups of json gamers
+	
+	
 	{
-	"json": [
+	"gamers":
+	[
 
 	{
-		"fname":["Cowardly"],
-		"lname":["Lion"],
-		"pword":["I ain't scared a' nutin'"],
-		"cpword":["I ain't scared a' nutin'"],
-		"email":["putEmUp@aol.com"],
-		"deviceValue":["phone"],
-		"friends":["3"],
-		"date":["June 16, 2012"],
+		"fname":"Cowardly",
+		"lname":"Lion",
+		"pword":"I ain't scared a' nutin'",
+		"cpword":"I ain't scared a' nutin'",
+		"email":"putEmUp@aol.com",
+		"deviceValue":"phone",
+		"friends":"3",
+		"date":"June 16, 2012"
 	},
 
 
 
 	{
-		"fname":["Dorothy"],
-		"lname":["of Kansas"],
-		"pword":["Toto"],
-		"cpword":["Toto"],
-		"email":["Kansas@aol.com"],
-		"deviceValue":["phone"],
-		"friends":["3"],
-		"date":["June 16, 2012"],
+		"fname":"Dorothy",
+		"lname":"of Kansas",
+		"pword":"Toto",
+		"cpword"["Toto",
+		"email":"Kansas@aol.com",
+		"deviceValue":"phone",
+		"friends":"3",
+		"date":"June 16, 2012"
 	},
 
 
 
 
 	{
-		"fname":["The Wizard"],
-		"lname":["of Oz"],
-		"pword":["Come back tomorrow"],
-		"cpword":["Come back tomorrow"],
-		"email":["NeverMindThatManBehindTheCurtain@aol.com"],
-		"deviceValue":["pc"],
-		"friends":["3"],
-		"date":"June 16, 2012"],
+		"fname":"The Wizard",
+		"lname":"of Oz",
+		"pword":"Come back tomorrow",
+		"cpword":"Come back tomorrow",
+		"email":"NeverMindThatManBehindTheCurtain@aol.com",
+		"deviceValue":"pc",
+		"friends":"3",
+		"date":"June 16, 2012"
 	},
 
 
 	{
-		"fname":["Glenda"],
-		"lname":["the good witch"],
-		"pword":["Be gone"],
-		"cpword":["Be gone"],
-		"email":["GoodWitches@aol.com"],
-		"deviceValue":["tablet"],
-		"friends":["10,000,000"],
-		"date":["June 16, 2012"],
+		"fname":"Glenda",
+		"lname":"the good witch",
+		"pword":"Be gone",
+		"cpword":"Be gone",
+		"email":"GoodWitches@aol.com",
+		"deviceValue":"tablet",
+		"friends":"10,000,000",
+		"date":"June 16, 2012"
 	},
 
 	{
-		"fname":["Wicked Witch of West"],
-		"lname":["of the West"],
-		"pword":["My Pretty"],
-		"cpword":["My Pretty"],
-		"email":["WickedWitches@aol.com"],
-		"deviceValue":["phone"],
-		"friends":["3"],
-		"date":["June 16, 2012"],
+		"fname":"Wicked Witch of West",
+		"lname":"of the West",
+		"pword":"My Pretty",
+		"cpword":"My Pretty",
+		"email":"WickedWitches@aol.com",
+		"deviceValue":"phone",
+		"friends":"3",
+		"date":"June 16, 2012"
 	}
-]}
+  ]
+}
 
-		
+	

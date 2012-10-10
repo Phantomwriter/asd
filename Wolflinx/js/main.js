@@ -16,7 +16,6 @@ $('#home').on('pageinit', function(){
 		/* then*/
 });	
 
-
 //SignUp Page
 $('#signupPage').on('pageinit', function(){
 	alert("It's also working");
@@ -33,10 +32,10 @@ $('#signupPage').on('pageinit', function(){
 	});
 	}
 
-//xmlPage
+//getXmlData
 $('#xmlButton').on('click',function(){
-                $('#showData').empty();
-                $('<p>').html('XML Data Imported').appendTo('#xmlPage');
+                $('<p>').html('xml').appendTo('#xmlData');
+				$('#xmlData').empty();
                 $.ajax({
                     url:"xhr/data.xml",
                     type: 'GET',
@@ -55,54 +54,85 @@ $('#xmlButton').on('click',function(){
 						var date = $(this).find('date').text();
 
                             $(''+
-								  '<div id="items" style="padding:10px" data-role="fieldcontain">'+
-										'<p>First name: '+ fname +'</p>'+
-										'<p>LastName: '+ lname +'</p>'+
-										'<p>Password: '+ pword +'</p>'+
-										'<p>Confirm password: '+ cpword+'</p>'+
-										'<p>E-Mail: '+ email +'</p>'+
-										'<p>deviceValue: '+ devicevalue +'</p>'+
-										'<p>friends: '+ friends +'</p>'+
-										'<p>group: '+ group +'</p>'+
-										'<p>date: '+ date +'</p>'+
+								  '<div id="items">'+
+										'<p>First name:'+ fname +'</p>'+
+										'<p>LastName:'+ lname +'</p>'+
+										'<p>Password:'+ pword +'</p>'+
+										'<p>Confirm password:'+ cpword+'</p>'+
+										'<p>E-Mail:'+ email +'</p>'+
+										'<p>deviceValue:'+ devicevalue +'</p>'+
+										'<p>friends:'+ friends +'</p>'+
+										'<p>group:'+ group +'</p>'+
+										'<p>date:'+ date +'</p>'+
 								   '</div>'
-                                 ).appendTo('#xmlPage');
-                 	  })
+                                 ).appendTo('#xmlData');
+                 	  });
 				 }
-			})
-		});
+		})
 
 
 });	
 
-//get json data with ajax
+//Get json data
 $('#jsonButton').on('click', function(){
+		$('<p>').html('json').appendTo('#jsonData');
 		$("#jsonData").empty();
 		$.ajax({
 			url:'xhr/data.json',
 			type:'GET',
 			dataType:'json',
-			success:function(response){
-				console.log(response);
-				for(var i=0, j=response.json.length; i<j; i++) {
-					var json =response.json[i];
+			success:function(result){
+				for(var i=0, j=result.json.length; i<j; i++) {
+					var json =result.json[i];
 				$('' + 
-					'<div id="jTitle">' +
-						'<p>'+ "First Name"+ json.fname +'</p>'+
-						'<p>'+ "Lat Name" +json.lname +'</p>'+
-						'<p>'+ "Password"+json.pword +'</p>'+
-						'<p>'+ "Confirm Password"+json.cpword +'</p>'+
-						'<p>'+ "E-mail"+ json.email +'</p>'+
-						'<p>'+ "deviceValue"+json.deviceValue +'</p>'+
-						'<p>'+ "Friends"+json.friends +'</p>'+
-						'<p>'+ "date"+json.date +'</p>'+
+					'<div>' +
+						'<p>'+ json.fname +'</p>'+
+						'<p>Last Name:' +json.lname +'</p>'+
+						'<p>Password:'+json.pword +'</p>'+
+						'<p>Confirm Password:'+json.cpword +'</p>'+
+						'<p>E-mail:'+ json.email +'</p>'+
+						'<p>deviceValue:'+json.deviceValue +'</p>'+
+						'<p>Friends:'+json.friends +'</p>'+
+						'<p>date:'+json.date +'</p>'+
 					'</div>'
 				).appendTo('#jsonData');
 			}
 		}
   });
+
 });
-					
+
+//Get CSV Data
+$('#csvButton').on('click', function(){
+			$('#csvData').empty();
+			$('<p>').html('CSV').appendTo('#csvData');
+			$.ajax({
+				type: "GET",
+				url: "xhr/data.csv",
+				dataType: "text",
+				success: function(data) {
+					var line = data.split('\n');
+					for (var i = 1, x = line.length; i < x; i++) {
+						var obj = line[i];
+						var item = obj.split(',');
+						var itemList = $(''+
+								  '<div id="items">'+
+										'<p>First Name: '+ item[0] +'</p>'+
+										'<p>Last Name: '+ item[1] +'</p>'+
+										'<p>Password: '+ item[2] +'</p>'+
+										'<p>Conform Password: '+ item[3] +'</p>'+
+										'<p>E-mail: '+ item[4] +'</p>'+
+										'<p>Device Value: '+ item[5] +'</p>'+
+										'<p>Friends: '+ item[6] +'</p>'+
+										'<p>Group: '+ item[7] +'</p>'+
+										'<p>Date: '+ item[8] +'</p>'+
+									'</div>'
+                                 ).appendTo('#csvData');
+
+				}		
+			}
+		})
+	});
 
 //Clear local storage
 function clearLocal(){
@@ -165,7 +195,7 @@ var getData= function(){
 	}
 };
 	
-//Store data
+//Save data
 var storeData= function(data){
 			var id=Math.floor(Math.random()*100000001);
 		console.log(data);
@@ -185,31 +215,6 @@ var storeData= function(data){
 					
 		
 } 
- var storeData = function(data){
-       var id = Math.floor(Math.random()*10000001);
-            id = key;
-        };*/
-        console.log(data);
-        getSelectedRadio();
-        var item= {};
-            item.fname= ['Chore Type:', $('#choretype').val()];
-            item.chorename = ['Chore Name:', $('#chorename').val()];
-            item.finishby  = ['Finish By:', $('#finishby').val()];
-           // item.urgency   = ['Is this chore Urgent?:', getSelectedRadios()];
-            item.difficulty= ["Difficulty:", $('#difficulty').val()];
-            item.recurring = ["Is this a recurring chore?:", $('#recurring').val()];
-            item.chorenotes= ["Chore Notes:", $('#chorenotes').val()];
-            
-        localStorage.setItem(id, JSON.stringify(item));
-        alert("Chore Saved");
-        changePage('displayList');
-        getData();
-
-		console.log('storeData works');
-    }
-
-
-
 
 //Links for the items
 var	makeItemLinks = function(key, linksLi){
@@ -296,12 +301,6 @@ var deviceValues = function() {
 };
 
 
-
-
-//Laod the XML
-
-<?xml version="1.0" encoding="UTF-8"?>
-	
 
 
 
